@@ -1,0 +1,85 @@
+---
+title: "LOG708 - Chapter 3 Exercises (C3.1 & C3.2)"
+author: "Alessandro Di Mattia"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Due: Thursday 03 Sep 2026 (Week 36 lab)
+Source: [Log708 Compendium — Exercises, Introduction to R](https://home.himolde.no/arntzen/Log708-compendium/exercises/_book/introduction-to-r.html)
+
+## Exercise 3.1 — Installation and Setup
+
+> **Note:** If you are working on a campus PC, do **not** try to install R/RStudio there.
+
+- [ ] Install R (from CRAN) and RStudio. Watch the RStudio installation video on Canvas.
+- [ ] Watch "More about RStudio" and set up an organized folder structure for coursework
+      (see the sample `MASTER_Coursework` folder on Canvas).
+- [ ] Identify a secure backup location for your coursework (protect against hardware
+      failure or theft — e.g. cloud storage, external drive).
+- [ ] Watch "RStudio projects" and create an R Project for the Chapter 3 exercises,
+      using the folder structure set up above.
+- [ ] (Optional) Set a default working directory via `Tools → Global Options`.
+
+## Exercise 3.2 — Variables and Vectors
+
+- [ ] Watch the "Variables and Vectors" video (Canvas/Panopto) and download the
+      accompanying R script.
+- [ ] Test the code yourself in your own RStudio installation.
+- [ ] Learn the keyboard shortcuts: `Ctrl+Enter` (run line/selection), `Ctrl+C`, etc.
+
+### 1. Birth year
+
+```{r}
+birth_year <- 2000
+birth_year
+```
+
+### 2. Date vector
+
+```{r}
+dates <- as.Date(c("2026-01-01", "2026-06-15", "2026-12-31"))
+dates
+```
+
+### 3. Basic calculations
+
+```{r}
+current_year <- 2026
+age <- current_year - birth_year
+age
+```
+
+### 4. Logical operators
+
+```{r}
+age > 18
+birth_year == 2000
+```
+
+### 5. Create a vector
+
+```{r}
+v <- c(10, 20, 30, 40, 50)
+v
+```
+
+### 6. Indexing
+
+```{r}
+v[1]      # first element
+v[2:4]    # elements 2 to 4
+v[-1]     # all but the first
+```
+
+### 7. Manipulating vector data
+
+```{r}
+v[6] <- 60      # add an element
+v <- v[v != 30] # remove an element
+v
+```
+
+## Notes / progress
+
+-
