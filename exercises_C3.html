@@ -11,7 +11,7 @@
 
 <meta name="author" content="Alessandro Di Mattia" />
 
-<meta name="date" content="2026-09-02" />
+<meta name="date" content="2026-09-08" />
 
 <title>LOG708 - Chapter 3 Exercises (C3.1 &amp; C3.2)</title>
 
@@ -353,7 +353,7 @@ display: none;
 <h1 class="title toc-ignore">LOG708 - Chapter 3 Exercises (C3.1 &amp;
 C3.2)</h1>
 <h4 class="author">Alessandro Di Mattia</h4>
-<h4 class="date">2026-09-02</h4>
+<h4 class="date">2026-09-08</h4>
 
 </div>
 
@@ -443,11 +443,35 @@ v</code></pre>
 <pre><code>## [1] 10 20 40 50 60</code></pre>
 </div>
 </div>
-<div id="notes-progress" class="section level2">
-<h2>Notes / progress</h2>
-<ul>
-<li></li>
-</ul>
+<div id="exercise-3.4" class="section level2">
+<h2>Exercise 3.4</h2>
+<pre class="r"><code>DF &lt;- data.frame(name = c(&quot;Norway&quot;, &quot;Sweden&quot;, &quot;Denmark&quot;, &quot;Finland&quot;, 
+                          &quot;Germany&quot;, &quot;Holland&quot;, &quot;Switzerland&quot;, &quot;Poland&quot;),
+                 population = c(5.5, 10.7, 5.9, 5.5, 84.4, 17.6, 8.8, 40),
+                 GDP = c(593, 593, 400, 300, 4456, 991, 885, 1801))
+DF</code></pre>
+<pre><code>##          name population  GDP
+## 1      Norway        5.5  593
+## 2      Sweden       10.7  593
+## 3     Denmark        5.9  400
+## 4     Finland        5.5  300
+## 5     Germany       84.4 4456
+## 6     Holland       17.6  991
+## 7 Switzerland        8.8  885
+## 8      Poland       40.0 1801</code></pre>
+<pre class="r"><code>names(DF)[3] &lt;- &quot;gdp&quot;
+# names(DF)[names(DF) == &quot;GDP&quot;] &lt;-&quot;gdp&quot;
+# install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code># DF &lt;- DF |&gt; rename(gdp = GDP)</code></pre>
 </div>
 
 

@@ -80,6 +80,22 @@ v <- v[v != 30] # remove an element
 v
 ```
 
-## Notes / progress
+## Exercise 3.4
 
--
+```{r}
+
+DF <- data.frame(name = c("Norway", "Sweden", "Denmark", "Finland", 
+                          "Germany", "Holland", "Switzerland", "Poland"),
+                 population = c(5.5, 10.7, 5.9, 5.5, 84.4, 17.6, 8.8, 40),
+                 GDP = c(593, 593, 400, 300, 4456, 991, 885, 1801))
+DF
+
+names(DF)[3] <- "gdp"
+# names(DF)[names(DF) == "GDP"] <-"gdp"
+# install.packages("dplyr")
+library(dplyr)
+# DF <- DF |> rename(gdp = GDP)
+
+
+```
+
