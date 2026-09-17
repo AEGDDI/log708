@@ -1,0 +1,441 @@
+﻿Date;Countries;Prod_line;AccLevel;EmplGen;EmplAffil
+1/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/2/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+1/6/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+1/8/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/10/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+1/12/2016 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+1/16/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+1/17/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/19/2016 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+1/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+1/28/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+1/30/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/1/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+2/2/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+2/4/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+2/4/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+2/6/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+2/7/2016 0:00:00;Country_01;Bronze;V;Female;Third Party
+2/8/2016 0:00:00;Country_01;Bronze;V;Male;Employee
+2/21/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+2/25/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+2/9/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/10/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+2/15/2016 0:00:00;Country_02;Alumin;II;Male;Third Party (Remote)
+2/14/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+2/15/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+2/13/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+2/15/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/16/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+2/16/2016 0:00:00;Country_02;Alumin;II;Male;Employee
+2/17/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+2/19/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+2/21/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+2/20/2016 0:00:00;Country_01;Alumin;V;Male;Third Party
+2/15/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+2/18/2016 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+2/22/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/24/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+2/24/2016 0:00:00;Country_02;Alumin;I;Female;Third Party
+2/24/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+2/29/2016 0:00:00;Country_02;Alumin;II;Male;Employee
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;V;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;V;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;V;Male;Third Party (Remote)
+2/26/2016 0:00:00;Country_01;Bronze;V;Male;Third Party (Remote)
+2/27/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/2/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+3/2/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+3/3/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/4/2016 0:00:00;Country_01;Bronze;V;Male;Employee
+3/5/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/6/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/6/2016 0:00:00;Country_01;Alumin;III;Male;Third Party (Remote)
+3/9/2016 0:00:00;Country_01;Bronze;V;Male;Third Party
+3/11/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+3/11/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/13/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+3/12/2016 0:00:00;Country_02;Alumin;III;Male;Employee
+3/14/2016 0:00:00;Country_01;Bronze;II;Male;Third Party (Remote)
+3/13/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/16/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/10/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+3/17/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/16/2016 0:00:00;Country_02;Bronze;II;Male;Employee
+3/18/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+3/19/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/14/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+3/18/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+3/18/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+3/22/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/22/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+3/25/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/30/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+3/30/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+3/31/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+3/31/2016 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+4/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/3/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+4/2/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+4/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+3/10/2016 0:00:00;Country_03;Steel;II;Male;Third Party
+3/24/2016 0:00:00;Country_03;Steel;IV;Male;Third Party
+3/22/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+3/31/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/4/2016 0:00:00;Country_02;Bronze;III;Male;Employee
+4/5/2016 0:00:00;Country_01;Bronze;V;Male;Third Party
+4/5/2016 0:00:00;Country_02;Bronze;V;Male;Third Party
+4/7/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/8/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/11/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/11/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/14/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+4/14/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/16/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/16/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/15/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/17/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+4/18/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/21/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+4/22/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/23/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/22/2016 0:00:00;Country_02;Bronze;II;Male;Third Party
+4/26/2016 0:00:00;Country_02;Bronze;I;Female;Third Party
+4/28/2016 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+4/29/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+4/30/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+4/30/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+4/30/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+5/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/2/2016 0:00:00;Country_02;Bronze;V;Female;Third Party (Remote)
+5/4/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+5/3/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+5/4/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+5/4/2016 0:00:00;Country_02;Bronze;I;Female;Third Party (Remote)
+5/4/2016 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+5/5/2016 0:00:00;Country_02;Bronze;I;Male;Third Party
+5/5/2016 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+5/11/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/12/2016 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+5/11/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/14/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/17/2016 0:00:00;Country_01;Steel;I;Male;Employee
+5/19/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+5/18/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+5/22/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+5/20/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+5/22/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/24/2016 0:00:00;Country_03;Steel;IV;Male;Third Party
+5/12/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+5/25/2016 0:00:00;Country_01;Alumin;II;Male;Employee
+5/27/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+5/25/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+5/26/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+5/26/2016 0:00:00;Country_03;Steel;I;Male;Employee
+6/1/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+6/2/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+6/3/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/4/2016 0:00:00;Country_01;Alumin;V;Male;Third Party
+6/3/2016 0:00:00;Country_03;Steel;II;Male;Third Party
+6/5/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+6/5/2016 0:00:00;Country_01;Bronze;V;Male;Employee
+6/8/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/7/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+6/7/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/8/2016 0:00:00;Country_01;Bronze;IV;Male;Employee
+6/8/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/8/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/10/2016 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+6/13/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+6/16/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/16/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/16/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/16/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/16/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/18/2016 0:00:00;Country_03;Steel;I;Male;Employee
+6/18/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+6/17/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+ ; ;Steel; ; ; 
+6/17/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+6/17/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+6/19/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+6/21/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/22/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+6/23/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+6/24/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/24/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/29/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+7/2/2016 0:00:00;Country_01;Alumin;V;Male;Third Party
+7/4/2016 0:00:00;Country_01;Bronze;III;Male;Third Party
+6/24/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+7/8/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+7/7/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+7/7/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+7/8/2016 0:00:00;Country_01;Bronze;III;Male;Third Party
+7/9/2016 0:00:00;Country_03;Steel;III;Male;Third Party
+7/10/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+7/11/2016 0:00:00;Country_02;Bronze;III;Male;Third Party (Remote)
+7/14/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+7/15/2016 0:00:00;Country_02;Bronze;I;Female;Employee
+7/16/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+7/18/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+7/20/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+7/21/2016 0:00:00;Country_02;Steel;I;Female;Employee
+7/23/2016 0:00:00;Country_02;Bronze;IV;Male;Third Party (Remote)
+7/27/2016 0:00:00;Country_01;Alumin;II;Male;Employee
+7/29/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+7/30/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+8/2/2016 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+8/1/2016 0:00:00;Country_02;Bronze;II;Female;Third Party
+8/2/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+8/1/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+8/4/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+8/11/2016 0:00:00;Country_02;Alumin;IV;Male;Third Party (Remote)
+8/11/2016 0:00:00;Country_02;Steel;I;Female;Employee
+8/12/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+8/14/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+8/14/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+8/15/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+8/18/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+8/19/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+8/22/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+8/24/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+8/25/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+8/24/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+8/29/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+8/27/2016 0:00:00;Country_01;Bronze;IV;Male;Employee
+8/30/2016 0:00:00;Country_02;Bronze;II;Female;Third Party (Remote)
+8/30/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+9/1/2016 0:00:00;Country_02;Bronze;II;Male;Third Party (Remote)
+9/2/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+9/4/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+9/3/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+9/4/2016 0:00:00;Country_01;Bronze;IV;Male;Employee
+9/6/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+9/5/2016 0:00:00;Country_02;Bronze;V;Female;Employee
+9/6/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+9/13/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+9/12/2016 0:00:00;Country_01;Steel;III;Female;Employee
+9/13/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+9/15/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+9/17/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+9/16/2016 0:00:00;Country_02;Bronze;II;Male;Employee
+9/20/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+9/20/2016 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+9/20/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+9/21/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+9/21/2016 0:00:00;Country_02;Bronze;II;Male;Third Party
+9/22/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+9/22/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+9/27/2016 0:00:00;Country_01;Bronze;V;Female;Third Party
+9/29/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+9/30/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+10/1/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+10/3/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+10/3/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+10/3/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+10/3/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+10/4/2016 0:00:00;Country_03;Steel;III;Male;Employee
+10/8/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+10/10/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+10/10/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+10/11/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+10/13/2016 0:00:00;Country_02;Alumin;II;Male;Third Party (Remote)
+10/13/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+10/18/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+10/18/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+10/20/2016 0:00:00;Country_02;Bronze;V;Male;Employee
+10/23/2016 0:00:00;Country_02;Alumin;II;Male;Employee
+10/24/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+10/26/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+10/27/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+10/29/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+10/29/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+11/4/2016 0:00:00;Country_01;Alumin;IV;Male;Employee
+11/8/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+11/8/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+11/11/2016 0:00:00;Country_01;Bronze;IV;Male;Employee
+11/13/2016 0:00:00;Country_01;Bronze;V;Male;Employee
+11/19/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+11/21/2016 0:00:00;Country_03;Steel;I;Male;Third Party
+11/23/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+11/23/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+11/25/2016 0:00:00;Country_02;Alumin;I;Male;Employee
+11/28/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+11/29/2016 0:00:00;Country_02;Bronze;II;Male;Employee
+11/30/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+12/1/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+12/1/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+12/1/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+12/8/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+12/8/2016 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+12/9/2016 0:00:00;Country_02;Alumin;II;Male;Third Party (Remote)
+12/10/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+12/12/2016 0:00:00;Country_02;Bronze;IV;Male;Employee
+12/13/2016 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+12/12/2016 0:00:00;Country_01;Alumin;III;Male;Employee
+12/12/2016 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+12/13/2016 0:00:00;Country_01;Bronze;I;Male;Third Party
+12/15/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+12/15/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+12/16/2016 0:00:00;Country_02;Bronze;I;Female;Third Party
+12/19/2016 0:00:00;Country_01;Alumin;I;Male;Employee
+12/23/2016 0:00:00;Country_01;Alumin;II;Male;Third Party
+12/22/2016 0:00:00;Country_02;Bronze;IV;Male;Third Party
+12/22/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+12/23/2016 0:00:00;Country_01;Alumin;I;Male;Third Party
+12/26/2016 0:00:00;Country_01;Bronze;I;Male;Employee
+12/28/2016 0:00:00;Country_02;Bronze;I;Male;Employee
+12/30/2016 0:00:00;Country_01;Alumin;IV;Male;Third Party
+12/31/2016 0:00:00;Country_01;Alumin;III;Male;Third Party
+1/2/2017 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+1/5/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/5/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+1/6/2017 0:00:00;Country_02;Bronze;IV;Male;Employee
+1/7/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+1/8/2017 0:00:00;Country_01;Bronze;III;Male;Employee
+1/8/2017 0:00:00;Country_02;Bronze;II;Male;Employee
+1/9/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/9/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+1/10/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+1/12/2017 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+1/14/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/17/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+1/17/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+1/17/2017 0:00:00;Country_02;Bronze;III;Male;Employee
+1/20/2017 0:00:00;Country_01;Bronze;IV;Male;Third Party (Remote)
+1/20/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/21/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+1/21/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+1/23/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/24/2017 0:00:00;Country_02;Bronze;V;Male;Third Party (Remote)
+1/24/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+1/25/2017 0:00:00;Country_01;Alumin;V;Male;Third Party
+1/27/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+1/29/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+1/28/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+1/31/2017 0:00:00;Country_02;Bronze;V;Male;Employee
+1/31/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+2/1/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+2/4/2017 0:00:00;Country_02;Alumin;I;Male;Employee
+2/5/2017 0:00:00;Country_03;Steel;I;Male;Employee
+2/7/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/7/2017 0:00:00;Country_01;Alumin;II;Male;Employee
+2/8/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+2/8/2017 0:00:00;Country_02;Bronze;V;Female;Third Party
+2/8/2017 0:00:00;Country_02;Bronze;I;Male;Third Party (Remote)
+2/8/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+2/8/2017 0:00:00;Country_01;Bronze;IV;Male;Employee
+2/9/2017 0:00:00;Country_01;Alumin;IV;Male;Third Party (Remote)
+2/8/2017 0:00:00;Country_01;Bronze;I;Male;Third Party (Remote)
+2/13/2017 0:00:00;Country_02;Bronze;II;Male;Employee
+2/13/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+2/13/2017 0:00:00;Country_02;Bronze;III;Male;Employee
+2/14/2017 0:00:00;Country_01;Alumin;IV;Male;Third Party
+2/15/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+2/16/2017 0:00:00;Country_01;Alumin;I;Female;Third Party (Remote)
+2/17/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/17/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+2/17/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/23/2017 0:00:00;Country_01;Alumin;IV;Male;Third Party
+2/23/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+2/25/2017 0:00:00;Country_01;Alumin;IV;Male;Third Party (Remote)
+2/25/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+2/25/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+2/26/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+2/26/2017 0:00:00;Country_02;Alumin;I;Male;Employee
+2/27/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+2/27/2017 0:00:00;Country_02;Alumin;III;Male;Employee
+3/1/2017 0:00:00;Country_01;Bronze;IV;Male;Third Party (Remote)
+3/2/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/2/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/2/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/4/2017 0:00:00;Country_02;Alumin;I;Male;Employee
+3/6/2017 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+3/8/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/9/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+3/8/2017 0:00:00;Country_01;Alumin;V;Male;Third Party
+3/9/2017 0:00:00;Country_02;Bronze;I;Male;Third Party
+3/10/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+3/15/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/15/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+3/15/2017 0:00:00;Country_02;Bronze;II;Female;Employee
+3/18/2017 0:00:00;Country_01;Alumin;V;Male;Third Party (Remote)
+3/22/2017 0:00:00;Country_01;Bronze;V;Male;Third Party (Remote)
+3/25/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+3/25/2017 0:00:00;Country_03;Steel;I;Male;Employee
+3/31/2017 0:00:00;Country_02;Bronze;I;Male;Third Party
+4/4/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+4/5/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+4/7/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+4/4/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+4/6/2017 0:00:00;Country_01;Bronze;IV;Male;Third Party
+4/7/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/10/2017 0:00:00;Country_02;Alumin;I;Male;Third Party
+4/8/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+4/11/2017 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+4/11/2017 0:00:00;Country_01;Alumin;I;Male;Third Party (Remote)
+4/11/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+4/13/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+4/12/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+4/23/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+4/19/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+4/23/2017 0:00:00;Country_01;Bronze;IV;Male;Third Party
+4/25/2017 0:00:00;Country_03;Steel;I;Male;Third Party
+4/25/2017 0:00:00;Country_02;Alumin;IV;Male;Employee
+4/25/2017 0:00:00;Country_01;Alumin;IV;Male;Employee
+4/24/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+4/28/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+4/29/2017 0:00:00;Country_02;Alumin;II;Male;Employee
+4/30/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+5/5/2017 0:00:00;Country_02;Alumin;I;Male;Third Party (Remote)
+5/6/2017 0:00:00;Country_01;Alumin;III;Male;Third Party
+5/6/2017 0:00:00;Country_02;Alumin;IV;Male;Employee
+5/6/2017 0:00:00;Country_02;Alumin;II;Male;Employee
+5/10/2017 0:00:00;Country_01;Alumin;V;Male;Third Party
+5/16/2017 0:00:00;Country_02;Bronze;I;Female;Third Party (Remote)
+5/16/2017 0:00:00;Country_01;Alumin;IV;Male;Employee
+5/16/2017 0:00:00;Country_02;Steel;I;Male;Employee
+5/17/2017 0:00:00;Country_02;Alumin;I;Male;Employee
+5/18/2017 0:00:00;Country_01;Bronze;IV;Male;Third Party
+5/19/2017 0:00:00;Country_01;Bronze;I;Male;Employee
+5/23/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/23/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/23/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+5/30/2017 0:00:00;Country_02;Steel;I;Female;Employee
+6/4/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+6/9/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/9/2017 0:00:00;Country_01;Bronze;I;Male;Third Party
+6/11/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/11/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+6/11/2017 0:00:00;Country_01;Bronze;I;Male;Third Party
+6/11/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/14/2017 0:00:00;Country_02;Alumin;III;Male;Third Party (Remote)
+6/15/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+6/17/2017 0:00:00;Country_01;Alumin;II;Male;Third Party
+6/18/2017 0:00:00;Country_01;Alumin;IV;Male;Third Party
+6/24/2017 0:00:00;Country_01;Alumin;II;Male;Employee
+6/20/2017 0:00:00;Country_01;Alumin;I;Male;Employee
+6/20/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+6/24/2017 0:00:00;Country_01;Alumin;I;Female;Third Party
+6/23/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+6/19/2017 0:00:00;Country_03;Steel;III;Male;Third Party
+6/22/2017 0:00:00;Country_03;Steel;I;Male;Employee
+6/22/2017 0:00:00;Country_03;Steel;I;Male;Employee
+6/29/2017 0:00:00;Country_02;Alumin;I;Male;Employee
+7/4/2017 0:00:00;Country_01;Alumin;I;Male;Third Party
+7/4/2017 0:00:00;Country_01;Alumin;I;Female;Employee
+7/5/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+7/6/2017 0:00:00;Country_02;Bronze;I;Male;Employee
+7/9/2017 0:00:00;Country_01;Alumin;I;Female;Third Party

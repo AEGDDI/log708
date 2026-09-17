@@ -1,5 +1,5 @@
 ---
-title: "LOG708 - Chapter 3 Exercises (C3.1 & C3.2)"
+title: "LOG708 - Chapter 3 Exercises (3.1 - 3.10)"
 author: "Alessandro Di Mattia"
 date: "`r Sys.Date()`"
 output: html_document
@@ -7,6 +7,25 @@ output: html_document
 
 Due: Thursday 03 Sep 2026 (Week 36 lab)
 Source: [Log708 Compendium — Exercises, Introduction to R](https://home.himolde.no/arntzen/Log708-compendium/exercises/_book/introduction-to-r.html)
+
+## Setup — Install and load required packages
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+# packages used throughout this document
+required_packages <- c("dplyr", "ggplot2")
+
+# install any that are missing, then load them all
+missing_packages <- setdiff(required_packages, rownames(installed.packages()))
+if (length(missing_packages) > 0) {
+  install.packages(missing_packages)
+}
+
+invisible(lapply(required_packages, library, character.only = TRUE))
+```
 
 ## Exercise 3.1 — Installation and Setup
 
@@ -60,7 +79,7 @@ birth_year == 2000
 ### 5. Create a vector
 
 ```{r}
-v <- c(10, 20, 30, 40, 50) 
+v <- c(10, 20, 30, 40, 50)
 v
 ```
 
@@ -80,22 +99,656 @@ v <- v[v != 30] # remove an element
 v
 ```
 
-## Exercise 3.4
+### 8. Assign 1, 2, 3 to a, b, c
 
 ```{r}
+a <- 1
+b <- 2
+c <- 3
+```
 
-DF <- data.frame(name = c("Norway", "Sweden", "Denmark", "Finland", 
+### 9. Test whether a is equal to b
+
+```{r}
+a == b
+```
+
+### 10. Test whether a+b = c
+
+```{r}
+a + b == c
+```
+
+### 11. Vector f
+
+```{r}
+f <- c(12, 13, 14, 15)
+f
+```
+
+### 12. Vector y, the product of b and each element of f
+
+```{r}
+y <- b * f
+y
+```
+
+### 13. Vectors u and v
+
+```{r}
+u <- c(55, 29, 51, 35, 33, 42)
+v <- c(2, 4, 6, 8, 10, 12)
+```
+
+### 14. 4th element of u assigned to x
+
+```{r}
+x <- u[4]
+x
+```
+
+### 15. Change the first element of u to 25
+
+```{r}
+u[1] <- 25
+u
+```
+
+### 16. Logical vector z: u < 35
+
+```{r}
+z <- (u < 35)
+z
+```
+
+### 17. Logical vector w: u < 35 and v > 5
+
+```{r}
+w <- (u < 35) & (v > 5)
+w
+```
+
+### 18. Length and type of u and w
+
+```{r}
+length(u)
+str(u)
+length(w)
+str(w)
+```
+
+### 19. Vectorized operations
+
+```{r}
+u + v
+u * v
+u / v
+v^4
+```
+
+### 20. List the global environment
+
+```{r}
+ls()
+```
+
+## Exercise 3.3 — Functions and Sequences
+
+```{r}
+# make a vector z of 5-10 arbitrary numbers
+z <- c(5, 67, 33, 43, 41, 55)   # or try z <- sample(1:100, 10)
+z
+
+# sum of elements in z
+sum(z)
+
+# average value of z
+mean(z)
+
+# median value of z
+median(z)
+
+# mean value of z^2
+mean(z^2)
+```
+
+```{r}
+# factorial(10) = 10*9*8*...*3*2*1
+factorial(10)
+
+# factorial(100)
+factorial(100)
+```
+
+```{r}
+# Suppose X is a standard normal variable. Find the probability that X < 2.5
+pnorm(2.5)
+
+# Find the probability that X > 2.5 (law of complement, or lower.tail = FALSE)
+1 - pnorm(2.5)
+pnorm(2.5, lower.tail = FALSE)
+```
+
+```{r}
+# Suppose W is normal with mean 4000, sd 300. Find P(W < 4500) and P(W > 5000)
+pnorm(4500, mean = 4000, sd = 300)
+pnorm(5000, mean = 4000, sd = 300, lower.tail = FALSE)
+
+# Find all probabilities that W < x, for x = 4100, 4200, 4300, 4400, 4500 (vectorized)
+x <- c(4100, 4200, 4300, 4400, 4500)
+pnorm(x, mean = 4000, sd = 300)
+```
+
+```{r}
+# write R code to generate the following sequences
+
+# 1,3,5,7,9,11
+seq(from = 1, to = 11, by = 2)
+
+# 5,6,7,8,9,10
+5:10
+
+# 1,3,1,3,1,3,1,3,1,3
+rep(c(1, 3), 5)   # or rep(c(1, 3), times = 5)
+
+# 8,7,6,5,4,3,2,1
+8:1
+```
+
+```{r}
+# suppose y is the vector defined by
+y <- c(5, 6, 12, 53, 15, 95, 12, 51, 25, 34, 59, 15, 40, 34)
+
+# find the length of y
+length(y)
+
+# extract a vector with the last 6 elements of y
+y[9:14]
+```
+
+## Exercise 3.4 — Data Frames: Basics
+
+```{r}
+DF <- data.frame(name = c("Norway", "Sweden", "Denmark", "Finland",
                           "Germany", "Holland", "Switzerland", "Poland"),
                  population = c(5.5, 10.7, 5.9, 5.5, 84.4, 17.6, 8.8, 40),
                  GDP = c(593, 593, 400, 300, 4456, 991, 885, 1801))
+
+# view the dataframe in the console (and in a spreadsheet-like view with View(DF))
 DF
-
-names(DF)[3] <- "gdp"
-# names(DF)[names(DF) == "GDP"] <-"gdp"
-# install.packages("dplyr")
-library(dplyr)
-# DF <- DF |> rename(gdp = GDP)
-
-
 ```
 
+```{r}
+# use R functions to find number of rows, number of columns
+c(nrow(DF), ncol(DF))
+
+# get a vector with the names of variables in DF
+names(DF)
+
+# play with head and tail to show first and last 3 lines of DF
+head(DF, 3)
+tail(DF, 3)
+```
+
+```{r}
+# rename column "GDP" to "gdp"
+names(DF)[3] <- "gdp"
+names(DF)
+```
+
+```{r}
+# find the median GDP and the mean population in DF
+median(DF$gdp)
+mean(DF$population)
+```
+
+```{r}
+# extract the column "population" into a separate vector "pop" (outside of DF)
+pop <- DF$population
+
+# extract subset A of DF with countries of population greater than 8 million
+A <- subset(DF, population > 8)
+A
+
+# extract subset B of DF where population is greater than 8 and gdp < 1000
+B <- subset(DF, population > 8 & gdp < 1000)
+B
+
+# how can you also extract subset B from A?
+B2 <- subset(A, gdp < 1000)
+B2
+```
+
+```{r}
+# extract row 5 from DF
+DF[5, ]
+
+# extract a dataframe with rows 2,3,4 from DF
+DF[2:4, ]
+
+# extract a dataframe with columns 2, 3 from DF
+DF[, 2:3]
+
+# extract a dataframe with columns 1 and 3 from DF
+DF[, c(1, 3)]
+
+# extract a dataframe with rows 1-4 and columns 1 and 3 from DF
+DF[1:4, c(1, 3)]
+```
+
+```{r}
+# run this code, but try first to guess what it does
+subset(DF, startsWith(name, "S"))
+```
+
+```{r}
+# compute a new column gdppc, containing GDP per capita for the countries
+DF$gdppc <- DF$gdp / DF$population
+DF
+```
+
+Population is in millions and GDP is in billions USD, so `gdppc` is in units of
+1000 USD. For example Denmark has about 68 000 USD in GDP per capita.
+
+```{r}
+# use "summary" function to summarize the data in DF
+summary(DF)
+```
+
+### b. Sorting data frames
+
+```{r}
+# example from the exercise text: sort DF by population
+S <- order(DF$population)
+DF[S, ]
+```
+
+```{r}
+# sort DF by gdp
+Sg <- order(DF$gdp)
+DF[Sg, ]
+
+# sort DF by gdp, decreasing
+Ug <- order(DF$gdp, decreasing = TRUE)
+DF[Ug, ]
+
+# sort DF by name
+Vn <- order(DF$name)
+DF[Vn, ]
+```
+
+Sorting by `name` sorts the rows alphabetically, since `order()` works on character
+vectors just as well as on numeric ones.
+
+## Exercise 3.5 — Visualization
+
+### a. Scatterplot of population vs gdp
+
+```{r}
+with(DF, plot(population, gdp, main = "Population and GDP",
+              xlab = "Population",
+              ylab = "GDP"))
+```
+
+### b. Save the plot as a .pdf file
+
+```{r, eval=FALSE}
+pdf("population_vs_gdp.pdf")
+with(DF, plot(population, gdp, main = "Population and GDP",
+              xlab = "Population",
+              ylab = "GDP"))
+dev.off()
+```
+
+### c. Boxplot of gdppc
+
+```{r}
+with(DF, boxplot(gdppc, main = "Boxplot of GDP per capita."))
+```
+
+### d. Histogram of gdppc
+
+```{r}
+with(DF, hist(gdppc, main = "Histogram of GDP per capita."))
+```
+
+### e. (Optional) ggplot2 version
+
+```{r, eval=FALSE}
+# install.packages("ggplot2")
+library(ggplot2)
+ggplot(DF, aes(x = population, y = gdp)) +
+  geom_point() +
+  labs(title = "Population and GDP", x = "Population", y = "GDP")
+```
+
+## Exercise 3.6 — NA's and Factors
+
+### a. Set Poland's GDP to NA
+
+```{r}
+DF[8, "gdp"] <- NA
+DF
+```
+
+### b. Deal with computations when NA's are present
+
+```{r}
+mean(DF$gdp, na.rm = TRUE)
+```
+
+### c. Run summary on DF
+
+```{r}
+summary(DF)
+```
+
+`summary()` reports the number of `NA`'s for each variable that contains missing
+values, in addition to the usual statistics computed on the non-missing values.
+
+### d. Table and barplot of 20 coin/die tosses
+
+```{r}
+toss <- c(4,4,3,5,3,6,3,5,4,3,4,3,4,1,3,1,5,5,4,3,4,1,6)
+
+t <- table(toss)
+t
+barplot(t)
+```
+
+The value "2" never appears in the observed tosses, so `table()` simply does not
+report a bar for it — a viewer might wrongly conclude that "2" is not a possible
+outcome. This can be fixed by first converting `toss` to a `factor` with all
+possible levels declared:
+
+```{r}
+tossfac <- factor(toss, levels = 1:6)
+t <- table(tossfac)
+t
+barplot(t)
+```
+
+### e. Probability of no 2's in 20 tosses
+
+```{r}
+prob <- (5/6)^20
+prob
+```
+
+Assuming a fair die and independent tosses, the probability of *not* getting a "2"
+on a single toss is 5/6. For this to happen 20 times in a row we multiply the
+probability for each toss, giving about 0.026 — i.e. it happens roughly 1 out of
+every 40 such sequences.
+
+## Exercise 3.7 — Descriptive Statistics
+
+```{r}
+# find information about the data, let the name AQ refer to the dataframe
+?airquality
+AQ <- airquality
+```
+
+### a. Basic info about the data frame
+
+```{r}
+nrow(AQ)
+ncol(AQ)
+names(AQ)
+head(AQ)
+tail(AQ)
+```
+
+### b. Rename "Solar.R" to "SolarRad"
+
+```{r}
+names(AQ)[2] <- "SolarRad"
+names(AQ)
+```
+
+### c. Summary of AQ
+
+```{r}
+summary(AQ)
+```
+
+There are 37 `NA`'s in `Ozone`, and 7 `NA`'s in `SolarRad`.
+
+### d. Mean temperature by month
+
+```{r}
+mtemp <- with(AQ, tapply(Temp, Month, mean))
+mtemp
+barplot(mtemp, main = "Mean temperature by month.")
+```
+
+We see the highest mean temperatures in July and August.
+
+### e. Daily temperature time series
+
+```{r}
+with(AQ, plot(Temp,
+              type = "l",
+              xlab = "Day",
+              main = "Daily temperature (F)",
+              lwd = 2))
+```
+
+Since one temperature observation is plotted per day (with time along the first
+axis), we get what is usually called a "time series plot".
+
+### f. Mean solar radiation by month (with NA's)
+
+```{r}
+with(AQ, tapply(SolarRad, Month, mean))
+
+# avoid NA results with na.rm = TRUE
+with(AQ, tapply(SolarRad, Month, mean, na.rm = TRUE))
+```
+
+### g. Barplot of mean solar radiation by month
+
+```{r}
+solradmean <- with(AQ, tapply(SolarRad, Month, mean, na.rm = TRUE))
+barplot(solradmean, main = "Mean solar radiation by month",
+        xlab = "Month",
+        ylab = "Radiation")
+```
+
+### h. Convert temperature to Celsius
+
+```{r}
+AQ$celsiustemp <- (5/9) * (AQ$Temp - 32)
+```
+
+### i. Boxplots of Celsius temperature
+
+```{r}
+# all data in one boxplot
+with(AQ, boxplot(celsiustemp, main = "Boxplot of temperature"))
+
+# grouped by month
+with(AQ, boxplot(celsiustemp ~ Month, main = "Boxplot of temperature, by month"))
+```
+
+### j. Correlation between wind and temperature
+
+```{r}
+with(AQ, cor(Wind, Temp))
+with(AQ, cor(Wind, celsiustemp))
+
+with(AQ, plot(Wind, celsiustemp, main = "Temperature vs wind",
+              ylab = "Temperature"))
+```
+
+It does not matter whether temperature is measured in Fahrenheit or Celsius degrees,
+since correlation is invariant to a linear (affine) change of scale.
+
+```{r}
+# get the 6 first columns (the original, un-derived variables)
+AQorig <- AQ[, 1:6]
+
+# get the correlation matrix, ignoring NA observations
+cor(AQorig, use = "complete.obs")
+```
+
+## Exercise 3.8 — Working Directory, Reading and Writing Data Files
+
+### a. Working directory
+
+```{r}
+getwd()
+```
+
+### b. Download and extract log708data
+
+- [x] Download `log708data.zip` (or `.7z`) from Canvas and extract it into the
+      `Data` folder in the LOG708 folder structure.
+
+### c. Read flights_NO.csv
+
+```{r}
+flights_NO <- read.csv("Data/flights_NO.csv")
+head(flights_NO)
+```
+
+### d. Subset of Monday flights with more than 50 seats
+
+```{r}
+df2 <- subset(flights_NO, Day.of.Week == "Monday" & Seats > 50)
+
+nrow(flights_NO)
+nrow(df2)
+```
+
+`df2` contains the flights departing on Mondays, using airplanes with more than 50
+seats.
+
+### e. Write df2 to disk
+
+```{r}
+# write df2 to disk with a given file name
+write.csv(df2, "LargeMondayFlights.csv", row.names = FALSE)
+
+# view the working directory, the new file should be there
+dir()
+```
+
+### f. Read the file back in and compare
+
+```{r}
+df3 <- read.csv("LargeMondayFlights.csv")
+identical(df2, df3)
+
+# to make them truly identical, keep row names when writing/reading
+write.csv(df2, "LargeMondayFlights.csv")
+df3 <- read.csv("LargeMondayFlights.csv", row.names = 1)
+identical(df2, df3)
+```
+
+### g. Write df2 to the main data folder
+
+```{r}
+write.csv(df2, "Data/LargeMondayFlights_NO.csv")
+```
+
+## Exercise 3.9 — R Packages
+
+```{r, eval=FALSE}
+install.packages("ggplot2")
+```
+
+```{r}
+# already installed and loaded in the "Setup" chunk above, but this is the
+# command you need to run once per R session to activate the package:
+library(ggplot2)
+
+# include "mtcars" as a dataframe in the workspace
+data(mtcars)
+head(mtcars)
+```
+
+```{r}
+# Redefine variable "am" as a factor, just to make figure labels look right.
+shift <- factor(mtcars$am, labels = c("automatic", "manual"))
+
+# make a plot
+ggplot(mtcars, aes(x = wt, y = hp, color = shift)) +
+  geom_point(size = 3) +
+  labs(title = "Horsepower vs weight",
+       x = "Weight",
+       y = "Horsepower")
+```
+
+### a. Relationship between weight and horsepower
+
+Horsepower is positively correlated with weight, as expected. Automatic-shift cars
+are mainly the heavier vehicles in this data set.
+
+### b. Add a regression line per group
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = hp, color = shift)) +
+  geom_point(size = 3) +
+  labs(title = "Horsepower vs weight",
+       x = "Weight",
+       y = "Horsepower") +
+  geom_smooth(method = lm, se = FALSE)
+```
+
+`geom_smooth(method = lm, se = FALSE)` adds a fitted linear regression line for
+each group defined by the `shift` variable.
+
+## Exercise 3.10 — Getting Help
+
+Suppose we have a standard normal variable Z, and another normal variable X with
+mean = 10 and standard deviation = 3. We want to find
+P[Z ≤ 2.1], P[Z ≥ 2.1], P[X ≤ 12], P[8.4 ≤ X ≤ 10.9].
+
+### a. Using ?Normal / help(Normal)
+
+```{r}
+pnorm(2.1)
+1 - pnorm(2.1)
+pnorm(2.1, lower.tail = FALSE)
+
+pnorm(12, mean = 10, sd = 3)
+
+pnorm(10.9, mean = 10, sd = 3) - pnorm(8.4, mean = 10, sd = 3)
+```
+
+### b. Searching the web
+
+- [ ] Search for "R calculate normal distribution" (or ask an AI assistant) and
+      compare the results to part a.
+
+### c. Find b such that P[Z ≤ b] = 0.80
+
+```{r}
+qnorm(0.80)
+```
+
+### d. Find c such that P[X ≥ c] = 0.90
+
+```{r}
+qnorm(0.10, mean = 10, sd = 3)
+
+# equivalently, using lower.tail = FALSE
+qnorm(0.90, mean = 10, sd = 3, lower.tail = FALSE)
+```
+
+### e. Simulate a sample from a normal distribution
+
+```{r}
+set.seed(3333)
+my_x <- rnorm(30, mean = 10, sd = 3)
+
+# compute mean and standard deviation
+M <- mean(my_x)
+S <- sd(my_x)
+
+# show result
+c(M, S)
+```
+
+The sample mean and standard deviation are reasonably close to the "true"
+parameter values 10 and 3.
