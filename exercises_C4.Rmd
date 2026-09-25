@@ -1,0 +1,381 @@
+---
+title: "LOG708 - Chapter 4 Exercises (4.1 - 4.5)"
+author: "Alessandro Di Mattia"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Source: [Log708 Compendium — Exercises, Hypothesis Testing](https://home.himolde.no/arntzen/Log708-compendium/exercises/_book/hypothesis-testing.html)
+
+In all tests, use significance level $\alpha = 0.05$ unless otherwise specified.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 4.1 — Testing the Mean and a Proportion
+
+In a supermarket, the manager tries to forecast and plan operations for the next
+quarter. One assumption is that the mean spending $\mu$ per customer is 290 NOK. A
+second assumption is that only 20% of customers pay with cash, while 10% of
+customers make a cash withdrawal using a bank card. In a sample of 400 customers,
+the average spending was found to be $\bar{x} = 319$ NOK, with a standard deviation
+of $S_x = 100$. Also in the sample, 56 of the 400 customers payed with cash.
+
+### a. Test H0: mu = 290 vs H1: mu != 290
+
+Using $\mu = 290$ as above, and $N(0,1)$ as the approximate null distribution for
+this one-sample t-test:
+
+```{r}
+n <- 400
+x_bar <- 319
+s_x <- 100
+
+t_obs <- (x_bar - 290) / (s_x / sqrt(n))
+t_obs
+
+# two-sided p-value
+pval <- 2 * pnorm(-abs(t_obs))
+pval
+```
+
+The observed value is 5.8, and the P-value is practically 0, so we reject $H_0$ at
+the 0.05 level. Mean spending is very unlikely to be 290 NOK.
+
+### b. Test H0: p = 0.20 vs H1: p != 0.20
+
+Let $p$ be the proportion of customers paying cash.
+
+```{r}
+x <- 56       # number paying cash
+n <- 400
+
+phat <- x / n
+phat
+
+z_obs <- (phat - 0.20) / sqrt(0.20 * (1 - 0.20) / n)
+z_obs
+
+pval_p <- 2 * pnorm(-abs(z_obs))
+pval_p
+```
+
+We get $Z_{obs} = -3.0$ and P-value $\approx 0.003$, so we again reject $H_0$. The
+proportion of cash-paying customers is likely quite a bit lower than the assumed
+0.20. We can double check this with R's built-in test:
+
+```{r}
+prop.test(x, n, p = 0.20, correct = FALSE)
+```
+
+### c. Is the cash balance reasonable?
+
+Suppose 10% of customers make a cash withdrawal, averaging 400 NOK, while (by
+assumption) 20% pay with cash, averaging 319 NOK. For each withdrawal (-400), there
+are on average two cash payments (2 * 319 = 638 NOK), so the cash balance should be
+fine under the original assumptions. Even using the estimated 14% paying cash
+(instead of the assumed 20%), each -400 withdrawal is countered by
+1.4 * 319 = 447 NOK in cash payments, so the balance still looks reasonable.
+
+## Exercise 4.2 — One-Sample Tests, Confidence Intervals and Correlation
+
+Data: `Trip_durations.csv`. Let $\mu_d$ be the (true) mean duration of trips, and
+$\mu_s$ be the mean distance of trips.
+
+```{r}
+tripdata <- read.csv("Data/Trip_durations.csv")
+head(tripdata)
+```
+
+### a. Sample size, mean and standard deviation for Duration
+
+```{r}
+n <- nrow(tripdata)
+x_bar <- mean(tripdata$Duration)
+s_x <- sd(tripdata$Duration)
+
+# print the three numbers as a vector (just to save space in output)
+c(n, x_bar, s_x)
+```
+
+### b. Test H0: mu_d = 24 vs H1: mu_d != 24 (without t.test)
+
+The test statistic is
+$$ T = \frac{\bar{x} - 24}{S_x / \sqrt{n}} $$
+with $N(0,1)$ as the approximate null distribution.
+
+```{r}
+t_obs <- (x_bar - 24) / (s_x / sqrt(n))
+t_obs
+
+p_value <- 2 * pnorm(-abs(t_obs))
+p_value
+```
+
+The P-value is about 0.52, so with $\alpha = 0.05$ we can **not** reject $H_0$.
+
+### c. Confirm with t.test
+
+```{r}
+durtest1 <- t.test(tripdata$Duration, mu = 24, alternative = "two.sided")
+durtest1$statistic
+durtest1$p.value
+```
+
+We get almost identical values to the manual calculation in b.
+
+### d. Repeat b. and c. for H0: mu_d = 23
+
+```{r}
+t_obs <- (x_bar - 23) / (s_x / sqrt(n))
+t_obs
+
+p_value <- 2 * pnorm(-abs(t_obs))
+p_value
+
+durtest2 <- t.test(tripdata$Duration, mu = 23, alternative = "two.sided")
+durtest2$statistic
+durtest2$p.value
+```
+
+This time the P-value is about 0.007, well below 0.05, so we clearly reject $H_0$ —
+the opposite conclusion from testing $\mu_d = 24$.
+
+### e. Test whether mu_s > 10 (Distance)
+
+```{r}
+disttest <- t.test(tripdata$Distance, mu = 10, alternative = "greater")
+disttest
+```
+
+We get $T_{obs} \approx 1.95$ with P-value $\approx 0.026$, which is below 0.05, so
+we reject $H_0$ and conclude the mean distance is greater than 10 km — although the
+evidence is relatively weak (the P-value is not much below 0.05).
+
+### f. 95% confidence intervals for mu_d and mu_s
+
+```{r}
+dur_test <- t.test(tripdata$Duration)
+dist_test <- t.test(tripdata$Distance)
+
+dur_test$conf.int
+dist_test$conf.int
+```
+
+The duration CI contains 24 but not 23, matching the "not rejected" / "rejected"
+results in b/c and d respectively. The distance CI reaches from about 10.00 to
+10.81, consistent with the (weak) rejection in e.
+
+### g. Correlation between Distance and Duration
+
+```{r}
+with(tripdata, cor(Duration, Distance))
+
+with(tripdata, plot(Distance, Duration,
+                    main = "Duration vs Distance for road trips."))
+```
+
+The correlation is about 0.95, and the scatterplot shows a strong, clearly positive
+relationship between the two variables.
+
+## Exercise 4.3 — Comparing Groups (Two-Sample t-tests)
+
+Data: `flat_prices.csv`, with sold flats in Molde, Kristiansund and Ålesund. The
+`town` variable is encoded 1 = Molde, 2 = Kristiansund, 3 = Ålesund.
+
+```{r}
+flats <- read.csv("Data/flat_prices.csv")
+head(flats)
+```
+
+### a. Mean price in the three towns
+
+```{r}
+with(flats, tapply(price, town, mean))
+```
+
+We see clear differences in average price between the towns.
+
+### b. Boxplot of price by town
+
+```{r}
+with(flats, boxplot(price ~ town))
+```
+
+This shows the same pattern of differences, and also a somewhat wider spread of
+prices in Ålesund.
+
+### c. Two-sample t-tests: Molde vs Kristiansund, and Kristiansund vs Ålesund
+
+$H_0: \mu_M = \mu_K$ vs $H_1: \mu_M \neq \mu_K$. Since `t.test` needs a grouping
+variable with only two levels, we first exclude town 3.
+
+```{r}
+flats_MK <- subset(flats, town != 3)
+with(flats_MK, t.test(price ~ town))
+```
+
+The relatively high P-value (about 0.26) means we can not reject $H_0$: no
+significant nominal price difference between Molde and Kristiansund.
+
+```{r}
+flats_KA <- subset(flats, town != 1)
+with(flats_KA, t.test(price ~ town))
+```
+
+The P-value here (about 0.052) is right at the boundary — close to significant, but
+still not below 0.05, so we do not reject $H_0$.
+
+### d. Mean square meter size in the three towns
+
+```{r}
+with(flats, tapply(area, town, mean))
+```
+
+The sample flats are, on average, somewhat different in size across towns, with
+Kristiansund flats being the largest on average.
+
+### e. Correlation between area and price
+
+```{r}
+with(flats, cor(price, area))
+
+with(flats, plot(area, price))
+```
+
+The correlation is strong, about 0.95, and the scatterplot confirms a clear
+positive relationship, as expected.
+
+### f. New variable: square meter price
+
+```{r}
+flats$sqmprice <- flats$price / flats$area
+head(flats)
+```
+
+### g. Two-sample t-test on square meter price: Molde vs Kristiansund
+
+```{r}
+flats_MK <- subset(flats, town != 3)
+with(flats_MK, t.test(sqmprice ~ town))
+```
+
+The P-value is almost 0, far below 0.05, so this time we **reject** $H_0$: square
+meter prices are significantly higher in Molde than in Kristiansund.
+
+### h. Why do nominal and square-meter price comparisons differ?
+
+When comparing nominal prices, we ignore the fact that, on average, Molde flats are
+also smaller than Kristiansund flats. Nominal price differences can therefore be
+misleading, since they mix together a "size effect" and a genuine "price level"
+effect. Square meter price controls for size, giving a fairer comparison of the
+underlying price level between towns.
+
+### i. Square meter price: Kristiansund vs Ålesund, and Molde vs Ålesund
+
+```{r}
+flats_KA <- subset(flats, town != 1)
+flats_MA <- subset(flats, town != 2)
+
+with(flats_KA, t.test(sqmprice ~ town))
+with(flats_MA, t.test(sqmprice ~ town))
+```
+
+We reject $H_0$ when comparing Kristiansund and Ålesund (very low P-value), but not
+when comparing Molde and Ålesund (P-value well above 0.05).
+
+### Bonus: using a factor for town
+
+Converting `town` to a factor with meaningful labels makes the output easier to
+read:
+
+```{r}
+flats$town <- factor(flats$town, levels = 1:3,
+                     labels = c("Molde", "Krsund", "Alesund"))
+with(flats, tapply(price, town, mean))
+```
+
+## Exercise 4.4 — A Binomial Test
+
+Using `flat_prices.csv` again, let $p$ be the (true) proportion of flats sold that
+have 2 rooms or less. We test
+
+$$H_0: p = 0.50 \ \text{ vs } \ H_1: p < 0.50 .$$
+
+```{r}
+flats <- read.csv("Data/flat_prices.csv")
+
+# TRUE/FALSE indicator for "small" flats: fewer than 3 rooms (i.e. <= 2 rooms)
+flats$small <- flats$rooms < 3
+
+countsm <- table(flats$small)
+countsm
+```
+
+`countsm` shows the count of small (`rooms < 3`) and large (all others) flats — 59
+small and 91 large flats.
+
+```{r}
+binom.test(countsm["TRUE"], sum(countsm), p = 0.50, alternative = "less")
+```
+
+The P-value is far below 0.05, so we reject $H_0$: the true proportion of small
+flats is significantly lower than 50%.
+
+## Exercise 4.5 — Checking Normality
+
+Using `flat_prices.csv`, we check whether the selling price of flats appears to
+follow a normal distribution.
+
+### a. Would you expect prices to be normally distributed?
+
+Prices in a real estate market are typically **not** exactly normal: they are
+bounded below by 0 and tend to have a longer right tail, since a few large/luxury
+properties can sell far above the typical price, while very few (if any) sell for
+much less than the bulk of the market. This kind of right-skew conflicts with the
+symmetric, unbounded shape of the normal distribution.
+
+### b. Normality test for price
+
+```{r}
+shapiro.test(flats$price)
+
+qqnorm(flats$price)
+qqline(flats$price)
+```
+
+A small `shapiro.test` P-value (below 0.05) indicates a significant departure from
+normality, and the Q-Q plot typically shows points curving away from the reference
+line in the tails — consistent with the right-skew expected in a).
+
+### c. Repeat within each town
+
+```{r}
+with(flats, tapply(price, town, shapiro.test))
+
+with(flats, tapply(price, town, function(x) { qqnorm(x); qqline(x) }))
+```
+
+The combined sample mixes three sub-populations with different mean price levels
+(see Exercise 4.3a), so pooling them together can make the overall distribution
+look more skewed/irregular than it does within any single town. Testing normality
+separately per town removes this "mixture" effect, and each town's own price
+distribution is closer to (though still not perfectly) normal.
+
+### d. Are square meter prices normally distributed?
+
+```{r}
+flats$sqmprice <- flats$price / flats$area
+
+shapiro.test(flats$sqmprice)
+
+qqnorm(flats$sqmprice)
+qqline(flats$sqmprice)
+```
+
+Since `sqmprice` already controls for flat size (and implicitly removes some of the
+town-to-town price-level differences relative to nominal price), it tends to be
+closer to normally distributed than the raw `price` variable — though it should
+still be checked against the `shapiro.test` P-value and Q-Q plot rather than
+assumed.
