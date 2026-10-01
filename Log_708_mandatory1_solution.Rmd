@@ -1,0 +1,294 @@
+---
+title: "Log 708 - Mandatory 1 Solution"
+author: "Halvard Arntzen"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+#Just keep this code in your file. It will by default print the 
+#chunks to your output file
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+These are suggested solutions to mandatory exercise set 1 for Log 708. Solutions are prepared using R markdown. As usual, file paths used in the solutions must be changed to work on other PC's. 
+
+## Exercise 1
+
+We start here by activating a few modern packages. We turn off "warning" and "message" in the R code chunk, to reduce irrelevant output.
+
+a.  We use the base code first:
+
+```{r}
+cardata <- read.csv("M:/Undervisning/Undervisningh23/Log708/Data/el_car_data_1.csv")
+
+#check top 10 rows
+head(cardata,10)
+
+nrow(cardata)
+```
+
+There are 844 rows of data. 
+
+In some R installations, there may be problems with norwegian letters "æ, ø, å". This can usually be resolved if we use the variant `read_csv` from the `readr` package. 
+
+b.  We can use this code
+
+```{r compute_1}
+
+cardata$pct_diesel <- 100*cardata$diesel / cardata$total
+cardata$pct_gasoline <- 100*cardata$gasoline / cardata$total
+
+head(cardata$pct_diesel)
+head(cardata$pct_gasoline)
+
+```
+
+Those figures looks reasonable.
+
+c.  This was easy:
+
+```{r zone_factor}
+#make zone an ordered factor (ordinal variable in R)
+cardata$zone = ordered(cardata$zone, levels = c("city", 
+                                               "below30",
+                                               "30to60",
+                                                "above60"))
+head(cardata$zone)
+```
+
+These are the zones of the first six municipalities, and we see the levels in right order.
+
+d.  Code as follows
+
+```{r splitdata}
+cardata12 <- subset(cardata, year == 2012)
+cardata18 <- subset(cardata, year == 2018)
+nrow(cardata12)
+nrow(cardata18)
+```
+
+Result as expected.
+
+e.  We can count using `table`, then a barplot.
+
+```{r count_zones}
+
+zonecount <- with(cardata18, table(zone))
+
+zonecount
+
+barplot(zonecount, main = "Number of municipalities in zones")
+```
+
+As expected, a vast majority in the "above 60" zone.
+
+f.  Let's try the "basic" solution that we have seen before:
+
+```{r}
+maxpop <- with(cardata18, max(population))
+minpop <- with(cardata18, min(population))
+
+#select rows where population is minimal or maximal
+df <- subset(cardata18, population == maxpop | population == minpop)
+#view first six columns of df, dont need more here. 
+df[, 1:6]
+
+```
+
+As expected, Oslo tops with almost 700 000, while Utsira (an Island near Stavanger) has a mere 208. (Log 708 is about half the size of that population :-)) Let's try to use `which.min`, `which.max`:
+
+```{r}
+#get the index of min and max values: 
+maxindex <- which.max(cardata18$population)
+minindex <- which.min(cardata18$population)
+
+#select corresponding rows, and first 6 columns (don't need more here):
+cardata18[c(maxindex, minindex), 1:6]
+
+```
+
+g.  Using adjusted income means for example, if the price inflation was 10% from 2012 to 2018, that a person earning 500' in 2012 and 550' in 2018 would be able to purchase the same amount of goods in the two years, so the income in *real* terms is the same. I.e. we measure *purchasing power* instead of the *nominal* income, which is really not directly comparable.
+
+We use the suggested code to get
+
+```{r income_means}
+
+with(cardata, tapply(income_med_adj, year, mean))
+
+```
+
+So, the real income is more or less the same.
+
+h.  We can use this code, which is an alternative to the suggested one.
+
+```{r}
+
+S <- with(cardata12, order(pct_elcar, decreasing = TRUE))
+
+S[1:10]
+
+cardata12[S[1:10], c("municip_name", "pct_elcar", "zone")]
+```
+
+
+i.  We will do the same for year 2018, just copying code from above:
+
+```{r}
+
+S <- with(cardata18, order(pct_elcar, decreasing = TRUE))
+
+S[1:10]
+
+cardata18[S[1:10], c("municip_name", "pct_elcar", "zone")]
+
+```
+
+We see, particularly in 2018 that almost all municipalities are close to major cities, the exeption being Averøy, close to Kristiansund. Regarding the incentives, people living in municipalities close to larger cities very often have work in the city. Going by an ordinary car means rush hour traffic and usually toll roads to get to work. With an el-car, they can use public lanes to avoid queueing, and also avoid toll fares. (One could additionally see that many of these municipalities are high-income, so families can easily afford two cars, which makes the el-car a great second alternative.) For Averøy, we need some local knowledge. Here a tunnel leading to Kristiansund was charging substantial road toll fares, and many people in Averøy have their jobs in Kristiansund, so it would pay off to purchase an electric car to avoid the toll fares. Here the traffic level is low, and there are no "public lane incentive" working here.
+
+j.  Mean percentage of elcars by zone:
+
+```{r}
+
+with(cardata18, tapply(pct_elcar, zone, mean))
+
+```
+
+We see very striking differences, as we already might have suspected.
+
+k.  The code was already suggested.
+
+```{r}
+with(cardata18, boxplot(pct_elcar ~ zone, 
+                        main = "Percentage of elcars by zone"))
+```
+
+We see the main tendency again, in the two middle zones, we have two extreme observations, that would be the top two we found above. In the "zone 3" meaning "above 60" we find generally low percentages, but still a number of high values.
+
+We could suspect that most of these are of the same type as Averøy above, a relatively rural municipality, where a large proportion of people have to pass a toll road station or expensive ferry crossing to get to work/school. (It is very common in Norway that large road investments are covered partly by road toll.)
+
+l.  Let's try both ways and compare. First we compute the mean over all municipalities in the two years. As we did with income above, we can do
+
+```{r }
+with(cardata, tapply(pct_elcar, year, mean))
+```
+
+Now, the correct national percentage can be found as follows.
+
+```{r }
+#2012:
+pct_12 <- with(cardata12, 100*sum(el) / sum(total))
+#2018
+pct_18 <- with(cardata18, 100*sum(el) / sum(total))
+#show numbers
+
+c(pct_12, pct_18)
+
+```
+
+We see that the wrong way of doing this leads to very false figures. Why? Because when we average over municipalities, small municipalities contribute as much as large ones to build the average, while most of the cars are in a relatively few large municipalities.
+
+m.  The `cor` function in R will do:
+
+
+```{r}
+cor(cardata18$pct_expense, cardata18$pct_elcar)
+```
+
+Or equivalently
+
+```{r eval = FALSE}
+with(cardata18, cor(pct_expense, pct_elcar))
+```
+
+A scatterplot can be made like this
+
+```{r}
+with(cardata18, plot(pct_expense, pct_elcar, 
+                     main = "Percentage elcars vs Percentage reporting expenses."))
+
+```
+
+This is how real data often looks, a bit messy. There is however a tendency that where `pct_expense` is high, so is `pct_elcar`. So to some extent, we could use the former to predict the latter.
+
+n.  This is the same as above, just replacing one variable
+
+```{r }
+with(cardata18, cor(sent_index, pct_elcar))
+```
+
+That is an even higher correlation. From the web description, we learn that this index to a large extent measures closeness to cities, where services and work opportunities are found in rich supply. So, for example we can deduce that the below30 zone are municipalities with very high sentrality index. Hence this correlation is not so surprising.
+
+A scatterplot:
+
+```{r}
+with(cardata18, plot(sent_index, pct_elcar, 
+                     main = "Percentage elcars vs Sentrality index."))
+
+```
+
+A clear picture of dependency, not quite linear this one. The sentrality index clearly predicts percentage of elcars.
+
+o.  So now, replace `pct_elcar` with `pct_diesel` which we calculated above.
+
+```{r }
+with(cardata18, cor(sent_index, pct_diesel))
+```
+
+A negative correlation, meaning that higher sentrality index means lower percentage of diesel cars. We can check the plot:
+
+```{r}
+with(cardata18, plot(sent_index, pct_diesel, 
+                     main = "Percentage disesel cars vs Sentrality index."))
+
+```
+
+We see a large variability in diesel percentages, and the clear dependency on sentrality. So, it makes sense as in rural areas one has longer distances, there is less charging infrastructure, which favors conventional cars. On the other hand, there has been discussions on banning diesel cars in city centers and so on, making gasoline and el-cars more favorable choices there.
+
+p.  OK, we can do a little more. About the population distribution? A histogram might make sense, using 2018 as data:
+
+```{r}
+with(cardata18, hist(population, main = "Population in 
+                     Norwegian Municipalities",
+                     breaks = 50))
+
+```
+
+We get an extremely skewed distribution, almost all municipalities are very small, while a very few are gigantic in comparison. Alternatively, looking at the total number of cars by population gives the same information, and some more:
+
+```{r}
+with(cardata18, plot(population, total, main = "Total cars by population"))
+```
+
+OK, are el-cars really replacing conventional cars? This is not easy to answer completely in a reliable way, however, we can simply see if the number of conventional cars per capita goes down from 2012 to 2018. Otherwise, the electric cars comes on top of an increasing mass of other cars. Let's see.
+
+```{r}
+#compute total number of diesel and gasoline cars by year
+C_cars <- with(cardata, tapply(diesel + gasoline , year, sum))
+#compute total population by year
+Tot_pop <- with(cardata, tapply(population, year, sum))
+#show the counts, and then divide to get per capita counts.
+C_cars
+Tot_pop
+C_cars/Tot_pop
+```
+
+So, the per capita number of conventional cars is slightly lower in 2018, which is likely to imply that electric vehicles has substituted some of the conventional car park. We can have a look at the total number of cars per capita as well:
+
+```{r}
+#compute cars by year in total
+Tot_cars <- with(cardata, tapply(total, year, sum))
+#divide to get per capita cars in total
+Tot_cars / Tot_pop
+
+```
+
+So, there are more cars per capita in 2018.
+
+
+
