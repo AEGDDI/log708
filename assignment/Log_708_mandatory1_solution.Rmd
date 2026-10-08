@@ -12,6 +12,13 @@ output:
 #Just keep this code in your file. It will by default print the 
 #chunks to your output file
 knitr::opts_chunk$set(echo = TRUE)
+
+#Set the working directory to the repository root (where the Data folder is)
+#user is the Windows user name of the current PC (or write it by hand, e.g. user <- "ALESSANDRO")
+user <- Sys.getenv("USERNAME")
+wd <- file.path("C:/Users", user, "Documents/GitHub/log708")
+setwd(wd)
+knitr::opts_knit$set(root.dir = wd)
 ```
 
 ## Intro
