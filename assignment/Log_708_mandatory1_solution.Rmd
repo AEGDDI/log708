@@ -25,7 +25,7 @@ We start here by activating a few modern packages. We turn off "warning" and "me
 a.  We use the base code first:
 
 ```{r}
-cardata <- read.csv("M:/Undervisning/Undervisningh23/Log708/Data/el_car_data_1.csv")
+cardata <- read.csv("Data/el_car_data_1.csv")
 
 #check top 10 rows
 head(cardata,10)
