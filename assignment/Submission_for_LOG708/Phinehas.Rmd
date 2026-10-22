@@ -1,0 +1,143 @@
+---
+title: "assignment"
+author: "Phinehas Yitschaq Benneh"
+date: "2026-10-01"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Phinehas/Desktop/log 708 assignment 1")
+```
+
+```{r}
+cardata <- read.csv("el_car_data_1.csv")
+```
+# task a
+
+```{r}
+head(cardata,10)
+tail(cardata, 10)
+nrow(cardata)
+```
+
+# task b
+```{r}
+cardata$diesel_pct <- (cardata$diesel/cardata$total)*100
+```
+
+
+```{r}
+cardata$gasoline_pct <- (cardata$gasoline/cardata$total)*100
+```
+
+# task c
+```{r}
+cardata$zone = ordered(cardata$zone, levels = c("city",
+"below30",
+"30to60",
+"above60"))
+```
+# task c1
+
+```{r}
+head(cardata$zone)
+```
+
+# task d
+```{r}
+cardata12 <- subset(cardata, year==2012)
+cardata18 <- subset(cardata, year==2018)
+```
+
+# task e
+```{r}
+table(cardata18$zone)
+```
+```{r}
+table(cardata18$zone)
+barplot(table(cardata18$zone))
+```
+
+
+
+# task f
+```{r}
+sorted_data <-cardata18[order(cardata18$total),]
+head(sorted_data, 1)
+tail(sorted_data,1)
+```
+# task g 
+```{r}
+with(cardata, tapply(income_med_adj,year, mean, na.rm=TRUE))
+```
+# task h
+```{r}
+S <- order(cardata12$pct_elcar, decreasing = TRUE)
+```
+# look at the first 10
+```{r}
+S[1:10]
+```
+#extract the rows in cardata12 corresponding to the first 10 indexes.
+```{r}
+cardata12[S[1:10],]
+```
+# task i
+```{r}
+S_18 <- order(cardata18$pct_elcar, decreasing = TRUE)
+```
+# task j
+```{r}
+mean_by_zone <- aggregate(pct_elcar~zone, data = cardata, FUN = mean, na.rm = TRUE)
+```
+# task k
+```{r}
+boxplot(pct_elcar~ zone, data= cardata, main="Distribution of Electric Car % by zone", xlab= "zone", ylab= "Electric Car Percentage(pct_elcar)",col= "lightblue", las= 1)
+```
+#task l, calculate total electric cars and total cars in Norway
+```{r}
+total_el_2012 <- sum(cardata$el, na.rm = TRUE)
+toatl_cars_2012 <- sum(cardata12$total, na.rm = TRUE)
+```
+# create national percentage for 2012
+```{r}
+national_pct_2012 <- (total_el_2012/ toatl_cars_2012)* 100
+```
+# calculate total electric cars and total cars in norway
+```{r}
+total_el_2018 <- sum(cardata18$el, na.rm = TRUE)
+total_cars_2018 <- sum(cardata18$total, na.rm = TRUE)
+```
+# create national percentage for 2018
+```{r}
+national_pct_2018 <- (total_el_2018/ total_cars_2018)* 100
+```
+# task m calculate the correlation coefficient
+```{r}
+cor(cardata$pct_expense, cardata$pct_elcar, use = "complete.obs")
+```
+# create he scatter plot
+```{r}
+plot(cardata$pct_expense, cardata$pct_elcar,main = "Relationship Between Expenses and Electric car %",xlab = "Percentage Expense(pct_expense)",ylab = "Percentage of Electric cars (pct_elcar)", col= "darkblue",pch= 19,las= 1)
+
+```
+# task n calculate the correlation coefficient for 2018
+```{r}
+cor_sent_el <- cor(cardata18$sent_index,cardata18$pct_elcar, use = "complete.obs")
+```
+# plot  the scatter plot
+```{r}
+plot(cardata18$sent_index, cardata18$pct_elcar,xlab = "centrality Index (sent_index)", ylab = "Pct Electric Cars (pct_elcar)", main = "Sent Index vs Electric Cars (2018) ",col= "darkblue", pch = 19, las= 1)
+```
+# task o calculate the correlation coefficient for 2018
+```{r}
+ plot(cardata18$sent_index, cardata18$pct_diesel,xlab = "centrality Index", ylab = "pct diesel", main = "Sent Index vs diesel Cars (2018)")
+```
+
